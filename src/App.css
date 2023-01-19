@@ -1,13 +1,25 @@
-.container {
+.todo-container {
   margin: auto;
   width: 50%;
-  border: 1px solid rgb(108, 161, 108);
-  background-color: darkolivegreen;
+  background-image: linear-gradient(to right, rgb(233, 180, 220), rgb(182, 229, 229));
   padding: 10px;
 }
 
-.delete-btn {
-  float: right;
-  background-color: red;
-  color: white;
+.App {
+  background-image: linear-gradient(to right, rgb(233, 180, 220), rgb(182, 229, 229));
+  height: 100vh;
+}
+
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+  background-image: linear-gradient(to right, rgb(182, 229, 229), rgb(233, 180, 220));
+}
+
+.todo-taskname{
+  overflow-wrap: break-word;
+}
+
+.todo-task-container{
+  border-radius: 15px;
 }

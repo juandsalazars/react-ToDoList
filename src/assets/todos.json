@@ -2,16 +2,22 @@
     {
         "id": 0,
         "task": "Do this",
-        "completed": false
+        "completed": false,
+        "priority": "low",
+        "date": "2023-05-05"
     },
     {
         "id": 1,
         "task": "Do that",
-        "completed": false
+        "completed": false,
+        "priority": "medium",
+        "date": "2023-01-08"
     },
     {
         "id": 2,
         "task": "Do another thing",
-        "completed": true
+        "completed": true,
+        "priority": "high",
+        "date": "2023-01-20"
     }
 ]

@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label,
     Input, ButtonGroup} from 'reactstrap';
 
-export default function TodoList({todos, onComplete, onDeleteItem, onEditItem}) {
+export default function CompletedList({todos, onComplete, onDeleteItem, onEditItem}) {
 
-    let todoList = [];
+    let todoList =[];
 
     if (todos.length !== 0) {
         todoList = todos.map((todo) => {
             return (
-                !todo.completed ?
-                <TodoItem
+                todo.completed ?
+                <CompletedItem
                     key={todo.id}
                     todo={todo}
                     onComplete={onComplete}
@@ -30,7 +30,7 @@ export default function TodoList({todos, onComplete, onDeleteItem, onEditItem}) 
     );
 }
 
-function TodoItem({todo, onComplete, onDeleteItem, onEditItem}){
+function CompletedItem({todo, onComplete, onDeleteItem, onEditItem}){
 
     const [isModalOpen, setModalOpen] = useState(false);
     const [taskname, setTaskname] = useState(todo.task);
@@ -99,7 +99,7 @@ function TodoItem({todo, onComplete, onDeleteItem, onEditItem}){
                 checked = {todo.completed}
                 onChange = {() => onComplete(todo.id)}
             />
-            <div className='col-3 col-sm-6 text-start todo-taskname align-self-center'>{todo.task}</div>
+            <div className='col-3 col-sm-6 text-start todo-task align-self-center'>{todo.task}</div>
             <div className='col-3 col-sm-2 text-start align-self-center '>{todo.date}</div>
             <Button className="fa fa-edit col-2 col-sm-1 btn-outline-muted h-100 align-self-center" onClick={() => setModalOpen(!isModalOpen)} />   
             <Button className="col-3 col-sm-2 btn-danger h-100 align-self-center" onClick={() => onDeleteItem(todo.id)}>
